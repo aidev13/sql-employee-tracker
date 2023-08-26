@@ -1,8 +1,8 @@
 
-DROP DATABASE IF EXISTS departments_db; -- DELETE DATA IF EXISTS
-CREATE DATABASE departments_db; -- CREATE DATABASE
+DROP DATABASE IF EXISTS application_db; -- DELETE DATA IF EXISTS
+CREATE DATABASE application_db; -- CREATE DATABASE
 
-USE departments_db;
+USE application_db;
 
     -- office, tech, sales
 CREATE TABLE departments (
@@ -31,11 +31,3 @@ CREATE TABLE employees (
     reportingManagment VARCHAR(125) DEFAULT 'Mike S',
     PRIMARY KEY (employeeID)
 );
-
-
-INSERT INTO departments (departmentName) VALUES 
-('Office'),
-('Tech'),
-('Sales');
-
-SELECT * FROM departments;
