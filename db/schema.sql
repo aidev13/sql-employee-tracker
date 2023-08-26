@@ -6,28 +6,26 @@ USE application_db;
 
     -- office, tech, sales
 CREATE TABLE departments (
-    departmentID INT NOT NULL AUTO_INCREMENT,
-    departmentName VARCHAR(75) NOT NULL,
-    PRIMARY KEY (departmentID)
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(45),
+    PRIMARY KEY (id)
+    
 );
 
-    -- service tech, sales, install tech, office tech, management
 CREATE TABLE roles (
-    roleID INT NOT NULL AUTO_INCREMENT,
-    jobTitle VARCHAR(125) NOT NULL,
-    roleDepartment VARCHAR(125) NOT NULL,
-    salary INT NOT NULL,
-    PRIMARY KEY (roleID)
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(45),
+    salary DECIMAL,
+    department_id INT NOT NULL,
+    PRIMARY KEY (id)
+
 );
 
-    -- Nancy, Ben, John, David, Danny, Mike S, Mike H, Russel, Nick, Tim, JP, Aaron, Ally, Matt, Heather
 CREATE TABLE employees (
-    employeeID INT NOT NULL AUTO_INCREMENT,
-    firstName VARCHAR(75) NOT NULL,
-    lastName VARCHAR(75) NOT NULL,
-    jobTitle VARCHAR(125) NOT NULL,
-    department VARCHAR(125) NOT NULL,
-    salary INT NOT NULL,
-    reportingManagment VARCHAR(125) DEFAULT 'Mike S',
-    PRIMARY KEY (employeeID)
+    id INT NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(45),
+    last_name VARCHAR(45),
+    role_id INT NOT NULL,
+    manager_id INT NOT NULL,
+    PRIMARY KEY (id)
 );
