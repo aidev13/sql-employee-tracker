@@ -1,13 +1,14 @@
 const inquirer = require('inquirer');
 const cTable = require('console.table');
-const departmentMenu = require('./routes/department')
+const departmentMenu = require('./routes/departmentroute.js')
 
 
 const mainMenu = () => {
     console.log(`
-    =================
-    .:| MAIN MENU |:.
-    =================
+=================
+     Welcome
+ -| MAIN MENU |-
+=================
     `);
     inquirer
         .prompt([
@@ -66,7 +67,5 @@ const mainMenu = () => {
         })
 
 };
-
-mainMenu()
 
 module.exports = mainMenu;

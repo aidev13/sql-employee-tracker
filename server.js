@@ -1,11 +1,14 @@
+const connection = require('./db/connection')
+const routes = require('./routes')
+const express = require('express')
+const app = express()
+const PORT = 3001
 
-const mysql = require('mysql2')
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'application_db'
-});
+// Routes
+app.use(routes)
 
-module.exports = connection;
+
+app.listen(PORT, () => console.log(`Hit! Your server is listening on http://localhost:${PORT}`))

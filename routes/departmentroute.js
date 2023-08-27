@@ -1,3 +1,4 @@
+const router = require('express').Router()
 const inquirer = require('inquirer');
 const connection = require('../server.js');
 const mainMenu = require('../index.js');
@@ -84,24 +85,25 @@ const backMenu = () => {
     })
 };
 
-// const backToMainMenu = () => {
-//     inquirer
-//         .prompt([
-//             {
-//                 type: 'list',
-//                 name: 'goBack',
-//                 message: 'Go Back',
-//                 choices: [
-//                     'Back'
-//                 ]
-//             }
-//         ]) .then(({goBack}) => {
+const backToMainMenu = () => {
+    inquirer
+        .prompt([
+            {
+                type: 'list',
+                name: 'goBack',
+                message: 'Go Back',
+                choices: [
+                    'Back'
+                ]
+            }
+        ]) .then(({goBack}) => {
         
-//         if (goBack === 'Back')
-//             mainMenu();
+        if (goBack === 'Back')
+            mainMenu();
 
-//     })
-// };
+    })
+};
 
 
+module.exports = router;
 module.exports = departmentMenu;

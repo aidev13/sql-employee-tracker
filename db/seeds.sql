@@ -22,11 +22,11 @@ INSERT INTO roles (title, salary, department_id) VALUES
 
 -- employees
 INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES
-('David', 'Liebherr', 030, 300),
-('John', 'Doe', 030, 300),
-('Ben', 'Garrison', 010, 300),
-('Danny', 'Greco', 020, 200),
-('Nancy', 'Desandras', 010, 100),
-('Russal', 'Zein', 030, 300),
-('Heather', 'Repp', 010, 100);
+('David', 'Liebherr', role_id, manager_id),
+('John', 'Doe', role_id, manager_id),
+('Ben', 'Garrison', role_id, manager_id),
+('Danny', 'Greco', role_id, manager_id),
+('Nancy', 'Desandras', role_id, manager_id),
+('Russal', 'Zein', role_id, manager_id),
+('Heather', 'Repp', role_id, manager_id);
 
