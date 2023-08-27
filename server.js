@@ -1,5 +1,5 @@
 
-import mysql from 'mysql2'; // Use ES6 import/export
+const mysql = require('mysql2')
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -8,5 +8,4 @@ const connection = mysql.createConnection({
     database: 'application_db'
 });
 
-export {connection};
-
+module.exports = connection;
