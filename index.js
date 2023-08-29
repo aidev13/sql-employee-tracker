@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
-const cTable = require('console.table');
 const departmentMenu = require('./routes/departmentroute.js')
+const employeeStartPrompt = require('./routes/employeeroute.js')
 
 
-const mainMenu = () => {
+const runMenu = () => {
     console.log(`
 =================
      Welcome
@@ -40,7 +40,7 @@ const mainMenu = () => {
                     break;
                 case 'View all employees':
                     console.clear()
-                    console.log('All Employees')
+                    employeeStartPrompt()
                     break;
                 case 'Add a department':
                     console.clear()
@@ -68,4 +68,5 @@ const mainMenu = () => {
 
 };
 
-module.exports = mainMenu;
+
+module.exports = runMenu;

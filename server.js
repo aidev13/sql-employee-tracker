@@ -1,3 +1,4 @@
+const runMenu = require('./index')
 const connection = require('./db/connection')
 const routes = require('./routes')
 const express = require('express')
@@ -10,5 +11,6 @@ app.use(express.urlencoded({ extended: true }))
 // Routes
 app.use(routes)
 
+runMenu()
 
 app.listen(PORT, () => console.log(`Hit! Your server is listening on http://localhost:${PORT}`))

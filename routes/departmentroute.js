@@ -1,7 +1,8 @@
 const router = require('express').Router()
+const cTable = require('console.table')
 const inquirer = require('inquirer');
-const connection = require('../server.js');
-const mainMenu = require('../index.js');
+const connection = require('../db/connection');
+const runMenu = require('../index')
 
 
 
@@ -36,29 +37,27 @@ const departmentMenu = () => {
                     console.table(rows);
                 });
                 backMenu()
-                console.clear('')
+                console.clear()
                 console.log(`
 =================
     View Data
 =================
           `);
-            console.log("Press ENTER to go back")
-            return 
+                console.log("Press ENTER to go back")
+                return
             }
             else if (deptMenu === 'add') {
-            console.clear()
-            console.log(`
+                console.clear()
+                console.log(`
 =================
      ADD DATA
 =================
           `);
-          backMenu()
+                backMenu()
             }
             else if (deptMenu === 'Go Back') {
                 backToMainMenu();
             }
-
-
         })
         .catch((err) => {
             console.log(err)
@@ -77,12 +76,10 @@ const backMenu = () => {
                     'Back'
                 ]
             }
-        ]) .then(({goBack}) => {
-        
-        if (goBack === 'Back')
-            departmentMenu();
-
-    })
+        ]).then(({ goBack }) => {
+            if (goBack === 'Back')
+                departmentMenu();
+        })
 };
 
 const backToMainMenu = () => {
@@ -90,18 +87,17 @@ const backToMainMenu = () => {
         .prompt([
             {
                 type: 'list',
-                name: 'goBack',
+                name: 'backtomain',
                 message: 'Go Back',
                 choices: [
                     'Back'
                 ]
             }
-        ]) .then(({goBack}) => {
-        
-        if (goBack === 'Back')
-            mainMenu();
-
-    })
+        ]).then(({ backtomain }) => {
+            if (backtomain === 'Back')
+            console.clear()
+            runMenu();
+        })
 };
 
 
